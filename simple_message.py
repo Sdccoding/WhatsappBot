@@ -23,7 +23,7 @@ print(x_arg)
 group_title = wait.until(EC.presence_of_element_located(( 
 	By.XPATH, x_arg))) 
 group_title.click() 
-inp_xpath = '//div[@class="_2S1VP copyable-text selectable-text"][@dir="ltr"][@data-tab="1"]'
+inp_xpath='//*[@id="main"]/footer/div[1]/div[2]/div/div[2]'
 input_box = wait.until(EC.presence_of_element_located(( 
 	By.XPATH, inp_xpath))) 
 for i in range(50):
