@@ -7,12 +7,12 @@ from selenium.webdriver.common.by import By
 import time
 from datetime import datetime
 
-driver = webdriver.Chrome('driver/chromedriver') 
+driver = webdriver.Chrome() 
 
 driver.get("https://web.whatsapp.com/") 
 wait = WebDriverWait(driver, 600) 
 
-target = '"Target name here"'
+target = '"Sumit"'
 
 string = "Hi this is a testing whatsapp bot. Please ignore the messages."
 
@@ -24,7 +24,7 @@ group_title.click()
 inp_xpath='//*[@id="main"]/footer/div[1]/div[2]/div/div[2]'
 input_box = wait.until(EC.presence_of_element_located(( 
 	By.XPATH, inp_xpath))) 
-//50 means 50 times
+#50 means 50 times
 for i in range(50):
 	now = datetime.now()
 	current_time = now.strftime("%H:%M:%S")
