@@ -11,23 +11,23 @@ driver = webdriver.Chrome()
 
 driver.get("https://web.whatsapp.com/") 
 wait = WebDriverWait(driver, 600) 
-
-target = '"Sumit"'
-
-string = "Hi this is a testing whatsapp bot. Please ignore the messages."
-
-x_arg = '//span[contains(@title,' + target + ')]'
-print(x_arg)
-group_title = wait.until(EC.presence_of_element_located(( 
-	By.XPATH, x_arg))) 
-group_title.click() 
-inp_xpath='//*[@id="main"]/footer/div[1]/div[2]/div/div[2]'
-input_box = wait.until(EC.presence_of_element_located(( 
-	By.XPATH, inp_xpath))) 
-#50 means 50 times
-for i in range(50):
-	now = datetime.now()
-	current_time = now.strftime("%H:%M:%S")
-	strs = string + "--" + str(i + 1) + current_time
-	input_box.send_keys(strs + Keys.ENTER)
-	time.sleep(1) 
+string = input("Type the common message that you want to send to people:")
+no=int(input("Enter number of persons whom you want to send:"))
+for i in range(no):
+	targetprim=input("Put ur target name(Name of the person whom you want to send the message):")
+	target='"'+targetprim+'"'
+	x_arg = '//span[contains(@title,' + target + ')]'
+	print(x_arg)
+	group_title = wait.until(EC.presence_of_element_located(( 
+		By.XPATH, x_arg))) 
+	group_title.click() 
+	inp_xpath='//*[@id="main"]/footer/div[1]/div[2]/div/div[2]'
+	input_box = wait.until(EC.presence_of_element_located(( 
+		By.XPATH, inp_xpath))) 
+	#50 means 50 times
+	for i in range(1):
+		now = datetime.now()
+		current_time = now.strftime("%H:%M:%S")
+		strs = "Hi "+targetprim+" "+string
+		input_box.send_keys(strs + Keys.ENTER)
+		time.sleep(1) 
