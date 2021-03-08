@@ -12,7 +12,7 @@ driver = webdriver.Chrome()
 driver.get("https://web.whatsapp.com/") 
 wait = WebDriverWait(driver, 600) 
 
-target = '"Sumit"'
+target = '"Target Name"'
 
 string = "Hi this is a testing whatsapp bot. Please ignore the messages."
 
