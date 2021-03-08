@@ -1,6 +1,4 @@
-# The following script has been developed by Amartya Mondal.
-# For more details visit https://atm1504.in
-# Follow me at https://github.com/atm1504
+#Copyright@Souhardya & Amartya.
 from selenium import webdriver 
 from selenium.webdriver.support.ui import WebDriverWait 
 from selenium.webdriver.support import expected_conditions as EC 
@@ -23,9 +21,10 @@ print(x_arg)
 group_title = wait.until(EC.presence_of_element_located(( 
 	By.XPATH, x_arg))) 
 group_title.click() 
-inp_xpath = '//div[@class="_2S1VP copyable-text selectable-text"][@dir="ltr"][@data-tab="1"]'
+inp_xpath='//*[@id="main"]/footer/div[1]/div[2]/div/div[2]'
 input_box = wait.until(EC.presence_of_element_located(( 
 	By.XPATH, inp_xpath))) 
+//50 means 50 times
 for i in range(50):
 	now = datetime.now()
 	current_time = now.strftime("%H:%M:%S")
